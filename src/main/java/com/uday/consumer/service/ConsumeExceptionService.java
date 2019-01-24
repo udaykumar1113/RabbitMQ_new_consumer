@@ -13,7 +13,7 @@ public class ConsumeExceptionService {
 
     ObjectMapper objectMapper=new ObjectMapper();
 
-    @RabbitListener(queues = "q.mypicture.image")
+    //@RabbitListener(queues = "q.mypicture.image")
     public void consumeException(String message) throws IOException {
         Picture picture=objectMapper.readValue(message, Picture.class);
         if(picture.getSize()>=9000) {
